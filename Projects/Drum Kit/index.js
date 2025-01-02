@@ -7,12 +7,14 @@ var drums =   document.querySelectorAll(".drum");
 for(var i = 0; i < buttons; i++){    
     drums[i].addEventListener("click", function(){
         playSound(this.innerHTML);
+        buttonAnimation(this.innerHTML);
     });
 }
 
 //For Pressing a Key
 document.addEventListener("keydown", function(event){
     playSound(event.key);
+    buttonAnimation(event.key);
 
     console.log(event.key);
 })
@@ -50,5 +52,12 @@ function playSound(key){
         }
 }
 
+function buttonAnimation(currentKey){
+    var active = document.querySelector("." + currentKey); //.w for class w
+    active.classList.add("pressed");
+    setTimeout(function() {
+        active.classList.remove("pressed");
+    }, 100);
+}
 /*document.querySelectorAll(".drum")[i].addEventListener("click", handleClick);
 })*/
