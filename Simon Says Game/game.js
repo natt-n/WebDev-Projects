@@ -9,14 +9,6 @@ function nextSequence(){ //choose a random number between 0 and 3
     return randomNumber;
 }
 
-function playSequence(gamePattern){ //plays the sequence of colours
-    for(var i = 0; i < gamePattern.length; i++){
-        var id = "#" + gamePattern[i];
-        playSound(gamePattern);
-        $(id).fadeOut(100).fadeIn(100);
-    }
-}
-
 function play(color){
     playSound(color);
     $("#" + color).fadeOut(100).fadeIn(100);
