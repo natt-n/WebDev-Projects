@@ -73,15 +73,17 @@ $(".btn").on("click", function(){
 
     if(checkAnswer()){
         console.log("Correct");
+        
+
+        if(userClickedPattern.length !== gamePattern.length){
+            return;
+        }
+
         setTimeout(function(){
             userClickedPattern = [];
             level++;
             nextLevel();
         }, 1000);
-
-        if(userClickedPattern.length !== gamePattern.length){
-            return;
-        }
 
     } else{
         console.log("Wrong");
